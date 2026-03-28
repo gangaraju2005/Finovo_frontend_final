@@ -20,13 +20,20 @@
         "foregroundImage": "./assets/app-adaptive.png",
         "backgroundColor": "#171717"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "usesCleartextTraffic": true,
+      "package": "com.gangaraju_2005.finovo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "@react-native-community/datetimepicker"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "ef36eadc-578d-4f3c-a9b6-197f3d670cd4"
+      }
+    }
   }
 }

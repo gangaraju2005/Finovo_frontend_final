@@ -26,6 +26,8 @@ const login = async (email, password) => {
  */
 const register = async (fullName, username, email, mobileNumber, password, confirmPassword) => {
     try {
+        console.log("DEBUG: Register baseURL =", apiClient.defaults.baseURL);
+        console.log("DEBUG: Register URL =", apiClient.defaults.baseURL + '/auth/register/');
         const response = await apiClient.post('/auth/register/', {
             full_name: fullName,
             username,
@@ -36,6 +38,9 @@ const register = async (fullName, username, email, mobileNumber, password, confi
         });
         return response.data;
     } catch (err) {
+        console.log("DEBUG: Register error:", err.message);
+        console.log("DEBUG: Register error code:", err.code);
+        console.log("DEBUG: Register error response:", err.response?.status, err.response?.data);
         if (!err.response) {
             throw new Error(
                 'Cannot reach server.'
